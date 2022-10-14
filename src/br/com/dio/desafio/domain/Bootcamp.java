@@ -2,6 +2,7 @@ package br.com.dio.desafio.domain;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,6 +12,8 @@ public class Bootcamp {
     private final LocalDate initialDate = LocalDate.now();
     private final LocalDate finalDate = initialDate.plusDays(45);
     private Set<Dev> subscribedDevs = new HashSet<>();
+
+    private Set<Content> contents = new LinkedHashSet<>();
 
     public String getName() {
         return name;
@@ -42,6 +45,14 @@ public class Bootcamp {
 
     public void setSubscribedDevs(Set<Dev> subscribedDevs) {
         this.subscribedDevs = subscribedDevs;
+    }
+
+    public Set<Content> getContents() {
+        return contents;
+    }
+
+    public void setContents(Set<Content> contents) {
+        this.contents = contents;
     }
 
     @Override
